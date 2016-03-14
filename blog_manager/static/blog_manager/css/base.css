@@ -1,0 +1,30 @@
+html, body {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+   width: 100%;
+   overflow-x: hidden;
+}
+
+/* header */
+.header {
+    margin: 0 0 20px 0;
+    background-color: #DDDDDD;
+}
+
+.header-title {
+    margin: 0 0 10px 10px;
+    padding: 10px 0 10px 0;
+    font-size: 40px;
+}
+
+.sidebar {
+    min-height: 100%;
+}
+.content {
+
+}
+
+.footer {
+    clear: both
+}

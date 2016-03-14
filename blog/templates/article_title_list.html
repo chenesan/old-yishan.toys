@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load markdown_deux_tags %}
+
+{% block content %}
+
+{% block content_head %}{% endblock %}
+
+{% for article in articles %}
+<p class="article-list-item">{{article.post_time.date}}: <a href="/entry/{{article.id}}/{{article.slug}}">{{ article.title }}</a></p>
+{% empty %}
+<div class="article">
+<h3 class="article-title">目前沒有文章</h3>
+</div>
+{% endfor %}
+{% endblock content%}

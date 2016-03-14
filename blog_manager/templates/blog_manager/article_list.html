@@ -1,0 +1,8 @@
+{% extends "blog_manager/base.html" %}
+{% block content %}
+{% for article in article_list %}
+<div class="article_block">
+<h3 class="article_title">{{ article.title }}</h3>
+</div>
+{% endfor %}
+{% endblock %}

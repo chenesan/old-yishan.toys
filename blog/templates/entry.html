@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load markdown_deux_tags %}
+{% load disqus_tags %}
+{% disqus_dev %}
+{% set_disqus_identifier article.id %}
+{% url 'entry' article.id article.slug as abs_url %}
+{% set_disqus_url abs_url %}
+
+{% block title %}{{ article.title }}{% endblock %}
+{% block content %}
+<div class="article">
+<h2 class="article-title">
+  <a href="/entry/{{article.id}}/{{article.slug}}">{{ article.title }}</a>
+</h2>
+<div class="article-header-meta">
+  <p>{{article.post_time}}</p>
+</div>
+<p class="article-content">{{ article.content|markdown:"article" }}</p>
+</div>
+<div class="tag-list">
+  <span class="tag-list-head">Tagged: </span>
+  {% for tag in article.tags.all %}
+  <a href="/tag/{{ tag.name }}" class="tag-link">{{ tag.name }}</a>
+  {% endfor %}
+</div>
+<hr></hr>
+<div id="disqus_thread"></div>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//wwwloperuvcom.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
+{% endblock %}

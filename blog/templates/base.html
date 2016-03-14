@@ -1,0 +1,81 @@
+{% load staticfiles %}
+<html>
+  <head>
+    <title>{% block title %}{{ blog_title }}{% endblock %}</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'blog/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/code_highlight.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/octicons/octicons.css' %}">
+</head>
+<body>
+<div class="wrapper">
+<div class="head-wrapper">
+<header class="jumbotron blog-header">
+  {% block header %}
+  <h1 class="blog-name"><a href="/">我需要一個好名字</a></h1>
+  {% endblock header %}
+</header>
+</div>
+<div class="content-wrapper">
+<div class="container content-container">
+  <div class="row">
+    <div class="col-md-2">
+    </div>
+    <section class="main-content col-md-8">
+      {% block content %}
+      {% endblock content %}
+    </section>
+    <div class="col-md-2">
+    </div>
+  </div>
+</div>
+</div>
+<div class="footer-wrapper">
+<footer class="footer">
+  {% block footer %}
+  <div class="row">
+    <div class="col-md-4 footer-tags">
+      <div class="btn-group">
+      {% for tag in tags %}
+      <a href="/tag/{{ tag.name }}" class="btn btn-default btn-sm footer-tag-link">
+        {{ tag.name }}
+      </a>
+      {% endfor %}
+      </div>
+    </div>
+    <div class="col-md-4 footer-archive">
+    </div>
+    <div class="col-md-4 footer-info">
+      <ul class="info-list">
+        <li>
+        <a href="/joke/fb" class="info-fb-link"><span class="mega-octicon octicon-thumbsup"></span></a>
+        </li>
+        <li>
+          <a href="https://github.com/chenesan" class="info-github-link"><span class="mega-octicon octicon-mark-github"></span></a>
+        </li>
+        <li>
+        <a href="mailto:pipio1994@gmail.com" class="info-mail-link"><span class="mega-octicon octicon-mail"></span></a>
+        </li>
+        <li>
+          <a href="/joke/squirrel" class="info-squirrel-link"><span class="mega-octicon octicon-squirrel"></span></a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+  <section class="footer-message">
+    Powered by <a href="https://www.djangoproject.com/">django</a>
+  </section>
+  {% endblock footer %}
+</footer>
+</div>
+</div>
+</body>
+</html>
