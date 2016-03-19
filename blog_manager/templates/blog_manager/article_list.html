@@ -1,8 +1,16 @@
 {% extends "blog_manager/base.html" %}
 {% block content %}
+<div class="article-manage-head">
+<h2>文章管理</h2>
+<button><a href="create">新增文章</a></button>
+</div>
 {% for article in article_list %}
-<div class="article_block">
-<h3 class="article_title">{{ article.title }}</h3>
+<div class="article-block">
+  <h3 class="article-title"><a href="/entry/{{article.id}}/{{article.slug}}">{{ article.title }}</a></h3>
+<div class="article-action">
+  <a href="update/{{article.id}}">修改</a>
+  <a href="delete/{{article.id}}">刪除</a>
+</div>
 </div>
 {% endfor %}
 {% endblock %}

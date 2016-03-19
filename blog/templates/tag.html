@@ -1,4 +1,6 @@
 {% extends "article_title_list.html" %}
-{% block content_head %}
-<h2 class="tag-article-list-head">All articles tagged "{{ tag.name }}"</h2>
+{% load staticfiles %}
+
+{% block content_header %}
+<h2 class="article-list-head">All articles tagged "{{ tag.name }}"</h2>
 {% endblock %}

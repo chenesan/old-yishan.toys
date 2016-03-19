@@ -1,15 +1,15 @@
 from __future__ import unicode_literals
 
-
 from django.db import models
+from django.utils import timezone
 
-
+"""
 class Category(models.Model):
     name = models.CharField(max_length=20)
 
     def __unicode__(self):
         return self.name
-
+"""
 
 class Tag(models.Model):
     name = models.CharField(max_length=30)
@@ -26,10 +26,10 @@ class Article(models.Model):
     """
     content = models.TextField()
     title = models.CharField(max_length=50)
-    post_time = models.DateTimeField()
+    post_time = models.DateTimeField(default=timezone.now)
     author = models.CharField(max_length=25, default="")
     slug = models.SlugField(max_length=50)
-    category = models.ForeignKey(Category)
+    #category = models.ForeignKey(Category)
     tags = models.ManyToManyField(Tag)
     hide = models.BooleanField(default=False)
 

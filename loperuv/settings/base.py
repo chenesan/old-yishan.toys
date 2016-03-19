@@ -46,9 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'analytical',
+    'disqus',
     'markdown_deux',
+    'pagedown',
     'blog',
-    'disqus'
+    'blog_manager',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -119,7 +122,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Taipei'
 
 USE_I18N = True
 

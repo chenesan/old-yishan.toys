@@ -15,25 +15,6 @@ class IndexView(generic.ListView):
         ).order_by('-post_time')
 
 
-class CategoryView(generic.ListView):
-    context_object_name = 'articles'
-    template_name = 'category.html'
-
-    def get_queryset(self):
-        self.category = get_object_or_404(
-            models.Category, name=self.args[0]
-        )
-        return models.Article.objects.filter(
-            category=self.category,
-            hide=False
-        ).order_by('-post_time')
-
-    def get_context_data(self, **kwargs):
-        context = super(CategoryView, self).get_context_data(**kwargs)
-        context['category'] = self.category
-        return context
-
-
 class EntryView(generic.DetailView):
     model = models.Article
     template_name = 'entry.html'

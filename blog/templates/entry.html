@@ -1,12 +1,17 @@
 {% extends "base.html" %}
+{% load staticfiles %}
 {% load markdown_deux_tags %}
 {% load disqus_tags %}
+
 {% disqus_dev %}
 {% set_disqus_identifier article.id %}
 {% url 'entry' article.id article.slug as abs_url %}
 {% set_disqus_url abs_url %}
 
 {% block title %}{{ article.title }}{% endblock %}
+{% block extend_head %}
+<link rel="stylesheet" href="{% static 'blog/css/entry.css' %}">
+{% endblock %}
 {% block content %}
 <div class="article">
 <h2 class="article-title">

@@ -1,15 +1,40 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+{% load static %}
 {% load markdown_deux_tags %}
+
+{% load article_tags %}
+
+{% block extend_head %}
+<link rel="stylesheet" href="{% static 'blog/css/article_title_list.css' %}">
+{% endblock %}
 
 {% block content %}
 
-{% block content_head %}{% endblock %}
+{% block content_header %}{% endblock %}
 
 {% for article in articles %}
-<p class="article-list-item">{{article.post_time.date}}: <a href="/entry/{{article.id}}/{{article.slug}}">{{ article.title }}</a></p>
+
+<article class="article-list-block">
+  <header class="article-list-header">
+  <h2 class="article-list-title">
+    <a href="/entry/{{article.id}}/{{article.slug}}" class="article-list-link">
+      {{ article.title }}
+    </a>
+  </h2>
+  </header>
+  <section class="article-list-section">
+    {{ article.content | first_n_paragraph:1 | markdown:"article" }}
+  </section>
+  <footer class="article-list-footer">
+    posted on
+    <time>
+      {{article.post_time.date}}
+    </time>
+  </footer>
+</article>
+<hr></hr>
 {% empty %}
-<div class="article">
-<h3 class="article-title">目前沒有文章</h3>
-</div>
+<h2 class="empty-article-list-head">拍謝啦這裡沒東西QAQ</h3>
 {% endfor %}
 {% endblock content%}

@@ -1,0 +1,15 @@
+from django.forms import ModelForm, Textarea
+
+from pagedown.widgets import PagedownWidget
+
+from blog import models
+
+class ArticleForm(ModelForm):
+    class Meta:
+        model = models.Article
+        fields = ['content', 'title', 'slug', 'tags', 'hide']
+        widgets = {
+            'content': PagedownWidget()
+        }
+        
+
