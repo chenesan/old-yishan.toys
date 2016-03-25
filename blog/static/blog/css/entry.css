@@ -1,0 +1,46 @@
+.article {
+    padding: 10px;
+}
+
+.article-title {
+    text-align: center;
+}
+
+.article-title a {
+    font-family: 'sourcehansans-tc-medium', sans-serif;
+    color: #000000;
+    font-size: 40px;
+}
+
+.articlie-content {
+    font-family: 'sourcehansans-tc-normal', sans-serif;
+    color: #000000;
+}
+
+.articlie-content, h1{
+    font-family: 'sourcehansans-tc-normal', sans-serif;
+    color: #000000;
+}
+
+.articlie-content, p{
+    font-family: 'sourcehansans-tc-normal', sans-serif;
+    color: #000000;
+    margin: 5px 0 5px 0;
+}
+
+.articlie-content, h2{
+    font-family: 'sourcehansans-tc-normal', sans-serif;
+    color: #000000;
+}
+
+
+.article-header-meta {
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.tag-list-head {
+    font-weight: bold;
+}
+
