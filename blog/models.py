@@ -17,6 +17,8 @@ class Tag(models.Model):
     def __unicode__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return '/tag/{name}/'.format(name=self.name)
 
 class Article(models.Model):
     """
@@ -34,6 +36,9 @@ class Article(models.Model):
 
     def __unicode__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return '/entry/{id}/{slug}/'.format(id=self.id, slug=self.slug)
 
 
 class Comment(models.Model):
