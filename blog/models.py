@@ -29,7 +29,6 @@ class Article(models.Model):
     post_time = models.DateTimeField(default=timezone.now)
     author = models.CharField(max_length=25, default="")
     slug = models.SlugField(max_length=50)
-    #category = models.ForeignKey(Category)
     tags = models.ManyToManyField(Tag)
     hide = models.BooleanField(default=False)
 

@@ -9,7 +9,7 @@ def show_categories(request):
 
 def show_tags(request):
     return {
-        'tags': models.Tag.objects.all()
+        'tags': list(set(models.Tag.objects.filter(article__hide=False)))
     }
 
 
