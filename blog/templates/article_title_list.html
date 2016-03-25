@@ -31,6 +31,10 @@
     <time>
       {{article.post_time.date}}
     </time>
+    | tagged: {% for tag in article.tags.all %}
+    {{tag.name}} 
+    {% endfor %}
+
   </footer>
 </article>
 <hr></hr>
