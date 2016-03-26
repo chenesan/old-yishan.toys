@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% load static %}
+
+{% load disqus_tags %}
 {% load markdown_deux_tags %}
 
 {% load article_tags %}
@@ -34,6 +36,8 @@
     | tagged: {% for tag in article.tags.all %}
     {{tag.name}} 
     {% endfor %}
+    | comments: 
+    <a href="{{ article.get_absolute_url }}#disqus_thread" data-disqus-url="{{ article.get_absolute_url }}">View Comments</a>
 
   </footer>
 </article>
@@ -41,4 +45,11 @@
 {% empty %}
 <h2 class="empty-article-list-head">拍謝啦這裡沒東西QAQ</h3>
 {% endfor %}
-{% endblock content%}
+
+{% endblock content %}
+
+{% block end_body %}
+
+<script id="dsq-count-scr" src="//wwwloperuvcom.disqus.com/count.js" async></script>
+
+{% endblock %}
