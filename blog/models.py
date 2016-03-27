@@ -3,13 +3,6 @@ from __future__ import unicode_literals
 from django.db import models
 from django.utils import timezone
 
-"""
-class Category(models.Model):
-    name = models.CharField(max_length=20)
-
-    def __unicode__(self):
-        return self.name
-"""
 
 class Tag(models.Model):
     name = models.CharField(max_length=30)
@@ -24,15 +17,14 @@ class Article(models.Model):
     """
     TODO:
     * where
-    * clicks
     """
-    content = models.TextField()
-    title = models.CharField(max_length=50)
-    post_time = models.DateTimeField(default=timezone.now)
     author = models.CharField(max_length=25, default="")
+    content = models.TextField()
+    hide = models.BooleanField(default=False)
+    post_time = models.DateTimeField(default=timezone.now)
     slug = models.SlugField(max_length=50)
     tags = models.ManyToManyField(Tag)
-    hide = models.BooleanField(default=False)
+    title = models.CharField(max_length=50)
     view_count = models.IntegerField(default=0)
 
     def __unicode__(self):
@@ -40,10 +32,3 @@ class Article(models.Model):
 
     def get_absolute_url(self):
         return '/entry/{id}/{slug}/'.format(id=self.id, slug=self.slug)
-
-
-class Comment(models.Model):
-    visitor = models.CharField(max_length=25)
-    content = models.TextField()
-    post_time = models.DateTimeField()
-    article = models.ForeignKey(Article)
