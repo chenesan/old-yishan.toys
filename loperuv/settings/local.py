@@ -14,3 +14,7 @@ DATABASES = {
 }
 GOOGLE_ANALYTICS_PROPERTY_ID = 'UA-75310497-1'
 
+# Static file
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
