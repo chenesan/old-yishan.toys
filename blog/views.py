@@ -25,6 +25,8 @@ class EntryView(generic.DetailView):
         context['comments'] = models.Comment.objects.filter(
             article=context['article']
         )
+        # add hit count
+        self.object.view_count += 1;
         return context
 
 

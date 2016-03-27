@@ -33,6 +33,7 @@ class Article(models.Model):
     slug = models.SlugField(max_length=50)
     tags = models.ManyToManyField(Tag)
     hide = models.BooleanField(default=False)
+    view_count = models.IntegerField(default=0)
 
     def __unicode__(self):
         return self.title

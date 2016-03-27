@@ -43,4 +43,6 @@
 .tag-list-head {
     font-weight: bold;
 }
-
+.view-count {
+    margin: 10px 0 0 0;
+}

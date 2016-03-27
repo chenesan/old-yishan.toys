@@ -22,11 +22,15 @@
 </div>
 <p class="article-content">{{ article.content|markdown:"article" }}</p>
 </div>
+
 <div class="tag-list">
   <span class="tag-list-head">Tagged: </span>
   {% for tag in article.tags.all %}
   <a href="/tag/{{ tag.name }}" class="tag-link">{{ tag.name }}</a>
   {% endfor %}
+</div>
+<div class="view-count">
+  <span class="view-count-head">閱讀次數: {{ article.view_count }}</span>
 </div>
 <hr></hr>
 <div id="disqus_thread"></div>
