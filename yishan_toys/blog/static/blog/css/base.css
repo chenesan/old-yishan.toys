@@ -17,7 +17,7 @@ html, body {
     padding: 100px;
     margin: 0 0 30px 0;
     background-size: 100% 100%;
-    background-image: url('header.jpg');
+    background-image: url('../images/header.jpg');
     background-repeat: no-repeat;
     background-color: -webkit-linear-gradient(#008844,#00dd77);
     background-color: -webkit-gradient(#008844,#00dd77);
@@ -111,4 +111,3 @@ h1.blog-name > a {
 .genericon {
     font-size: 32px;
 }
-
