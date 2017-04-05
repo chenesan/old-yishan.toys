@@ -1,4 +1,4 @@
 *.pyc
 *.log
 *.sqlite3
-local_env.sh
+my_*.sh
