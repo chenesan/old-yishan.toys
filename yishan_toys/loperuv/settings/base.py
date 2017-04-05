@@ -138,3 +138,23 @@ STATIC_URL = '/static/'
 
 DISQUS_API_KEY = '4d32ee347147444c840fe3e791bab12d'
 DISQUS_WEBSITE_SHORTNAME = 'wwwloperuvcom'
+
+
+# Markdown Deux style
+
+MARKDOWN_DEUX_STYLES = {
+    "default": {
+        "extras": {
+            "code-friendly": None,
+        },
+        "safe_mode": "escape",
+    },
+    "article": {
+        "extras": {
+            "fenced-code-blocks": None,
+            "code-friendly": None,
+            "pyshell": None
+        },
+        "safe_mode": "escape",
+    }
+}
