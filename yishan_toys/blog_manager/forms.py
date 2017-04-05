@@ -11,5 +11,6 @@ class ArticleForm(ModelForm):
         widgets = {
             'content': PagedownWidget()
         }
-        
-
+    def __init__(self, *args, **kwargs):
+        super(ArticleForm, self).__init__(*args, **kwargs)
+        self.fields['tags'].required = False
