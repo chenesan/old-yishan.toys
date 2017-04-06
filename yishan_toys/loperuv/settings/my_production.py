@@ -3,8 +3,7 @@ from .base import *
 
 DEBUG = False
 
-# fill in your hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.yishan.toys', 'yishan.toys']
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
@@ -19,11 +18,14 @@ DATABASES = {
 }
 
 # Error
-# fill in admins and manager info.
-ADMINS = []
+ADMINS = [
+    ('chenesan', 'pipio1994@gmail.com'),
+]
 
-MANAGERS = []
+MANAGERS = [
+    ('chenesan', 'pipio1994@gmail.com'),
+]
 
 GOOGLE_ANALYTICS_PROPERTY_ID = get_env_var('GOOGLE_ANALYTICS_PROPERTY_ID')
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')

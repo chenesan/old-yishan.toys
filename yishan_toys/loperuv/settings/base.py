@@ -136,8 +136,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Markdown Deux style
-
 MARKDOWN_DEUX_STYLES = {
     "default": {
         "extras": {
@@ -154,5 +152,6 @@ MARKDOWN_DEUX_STYLES = {
         "safe_mode": "escape",
     }
 }
+
 DISQUS_API_KEY = get_env_var('DISQUS_API_KEY')
 DISQUS_WEBSITE_SHORTNAME = get_env_var('DISQUS_WEBSITE_SHORTNAME')
