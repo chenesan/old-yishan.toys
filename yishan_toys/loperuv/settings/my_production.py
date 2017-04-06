@@ -1,7 +1,7 @@
 from .base import *
 
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['www.yishan.toys', 'yishan.toys']
 
@@ -12,7 +12,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            'read_default_file': os.path.join(BASE_DIR, 'production.cnf'),
+            'read_default_file': os.path.join(os.path.dirname(BASE_DIR), 'my_production.cnf'),
         },
     }
 }
