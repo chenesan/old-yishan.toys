@@ -136,10 +136,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-DISQUS_API_KEY = '4d32ee347147444c840fe3e791bab12d'
-DISQUS_WEBSITE_SHORTNAME = 'wwwloperuvcom'
-
-
 # Markdown Deux style
 
 MARKDOWN_DEUX_STYLES = {
@@ -158,3 +154,5 @@ MARKDOWN_DEUX_STYLES = {
         "safe_mode": "escape",
     }
 }
+DISQUS_API_KEY = get_env_var('DISQUS_API_KEY')
+DISQUS_WEBSITE_SHORTNAME = get_env_var('DISQUS_WEBSITE_SHORTNAME')
