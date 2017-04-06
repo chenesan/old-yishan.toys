@@ -136,5 +136,22 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MARKDOWN_DEUX_STYLES = {
+    "default": {
+        "extras": {
+            "code-friendly": None,
+        },
+        "safe_mode": "escape",
+    },
+    "article": {
+        "extras": {
+            "fenced-code-blocks": None,
+            "code-friendly": None,
+            "pyshell": None
+        },
+        "safe_mode": "escape",
+    }
+}
+
 DISQUS_API_KEY = get_env_var('DISQUS_API_KEY')
 DISQUS_WEBSITE_SHORTNAME = get_env_var('DISQUS_WEBSITE_SHORTNAME')
